@@ -1,0 +1,9 @@
+.hello {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .hello {
+      text-align: start;
+    }
+  }

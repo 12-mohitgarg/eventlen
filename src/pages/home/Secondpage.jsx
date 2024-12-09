@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import img1 from "../../../src/assets/img.png";
 import img2 from "../../../src/assets/pagefirstthird.png";
 import img3 from "../../../src/assets/firstpagesecond.png";
+import bg2 from "../../../src/assets/bg2.png";
+import '../bussiness/second.css'
+import { Link } from "react-router-dom";
 
 const Secondpage = () => {
   const [events, setEvents] = useState([]);
@@ -109,29 +112,30 @@ const Secondpage = () => {
   }
 
   return (
-    <div className="bg-black shadow-2xl bg-cover shadow-black  text-white" style={{ backgroundImage: `url(${img2})` }}>
-      <div className="hidden lg:block">
+    <div className="bg-black  bg-cover w-full   text-white" style={{ backgroundImage: `url(${img2})` }}>
+     
+      <div className="">
+        
       <div
-  className="absolute w-full h-[10rem] bottom-[-2rem] z-20 bg-cover bg-center "
+  className="absolute w-full h-[40%]  top-[25rem] z-20 bg-cover   "
   style={{
     backgroundImage: `url(${img3})`,
   }}
-></div>
-
-      <div
-  className="flex items-center absolute bottom-[-20px] left-[35%] z-50 mx-auto w-11/12 max-w-lg border-2 border-[#f5167e] bg-white rounded-xl px-4 py-2 shadow-lg "
- 
 >
-  <input
-    type="text"z
-    placeholder="Search by Events"
-    value={searchTerm}
-    onChange={handleInputChange}
-    className="w-full bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none py-2"
-    aria-label="Search Events"
-  />
+<div className="flex items-center  z-50 w-[18rem] sm:w-[20rem] lg:w-[40%] absolute top-[8rem] left-[17%] sm:left-[25%] md:left-[30%] mx-auto mt-3  sm:mt-10 md:mt-10">
+  {/* Input Field */}
+  <div className="flex items-center border-2 border-[#f5167e] bg-white rounded-xl overflow-hidden px-4 w-full">
+    <input
+      type="text"
+      placeholder="Search by Events"
+      value={searchTerm}
+      onChange={handleInputChange}
+      className="bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none py-3 w-full"
+    />
+  </div>
+  
   {/* Search Button */}
-  <button className="px-5 py-3 bg-[#f5167e] rounded-lg text-white  focus:ring-4 focus:ring-[#f5167e]transition-all duration-300">
+  <button className="absolute right-0 px-4 py-[1.2rem] bg-[#f5167e] rounded-lg text-white hover:bg-[#e41472] transition">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -148,23 +152,29 @@ const Secondpage = () => {
     </svg>
   </button>
 </div>
+ </div>
+
+
       </div>
 
       
-      <section className="py-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-start mt-12 mb-8">
+      <section className="py-8 z-40 max-w-7xl  px-2 mx-auto">
+        <h2 className="text-3xl font-bold text-start   sm:mt-6 md:mt-12 mb-8">
           Discover the Best of Online Events
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {events.map((event) => (
             <div className="max-w-sm mx-auto  text-white rounded-lg overflow-hidden  relative">
             
             <div className="relative ">
+              <Link to='/event-details'  className="block no-underline">
               <img
                 src={event.img}
                 alt="ForByStudents Logo"
-                className="w-full h-64 object-cover rounded-2xl"
+                className="w-80  h-80 object-cover rounded-2xl"
               />
+              </Link>
               
               <div className="absolute top-2 right-2 bg-[#262626] text-[#f5167e] rounded-full p-2">
                 <svg
@@ -179,14 +189,14 @@ const Secondpage = () => {
             </div>
           
             {/* Badge (Line1) */}
-            <div className="absolute bottom-[16rem] left-4">
-              <span className="inline-block px-3 py-1 text-sm text-white bg-[#f5167e] rounded-2xl">
+            <div className="absolute  top-[17rem] left-4">
+              <span className="inline-block px-3 py-1 text-sm text-white bg-[#f5167e] rounded-md">
                 {event.line1}
               </span>
             </div>
           
             {/* Event Details */}
-            <div className="py-4 px-4 flex gap-4">
+            <div className="py-4 flex gap-4">
               {/* Date Section */}
               <div className="flex flex-col items-center">
                 <span className="text-[#f5167e] text-lg font-bold">JAN</span>
@@ -213,26 +223,31 @@ const Secondpage = () => {
           </div>
           ))}
         </div>
-        <button className="block text-xl mx-auto mt-8 w-[24rem] px-6 py-3 bg-white rounded-full text-[#f5167e] font-bold hover:bg-[#f5167e]">
+        
+        <Link to='/event'  className="block no-underline">
+        <button className="block text-xl mx-auto mt-8  w-[20rem] sm:w-[24rem] px-6 py-3 bg-white rounded-full text-[#f5167e] font-bold ">
           See More
         </button>
+        </Link>
       </section>
 
       {/* Trending Events */}
-      <section className="py-8 max-w-7xl mx-auto">
+      <section className="py-8 max-w-7xl px-2 mx-auto">
         <h2 className="text-3xl font-bold text-start mb-8">
           Trending Events Around the World
         </h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {events.map((event) => (
             <div className="max-w-sm mx-auto  text-white rounded-lg overflow-hidden  relative">
             {/* Image Section */}
             <div className="relative ">
+            <Link to='/event-details'  className="block no-underline">
               <img
                 src={event.img}
                 alt="ForByStudents Logo"
                 className="w-full h-64 object-cover rounded-2xl"
               />
+              </Link>
               {/* Star Icon */}
               <div className="absolute top-2 right-2 bg-[#262626] text-[#f5167e] rounded-full p-2">
                 <svg
@@ -247,14 +262,14 @@ const Secondpage = () => {
             </div>
           
             {/* Badge (Line1) */}
-            <div className="absolute bottom-[16rem] left-4">
-              <span className="inline-block px-3 py-1 text-sm text-white bg-[#f5167e] rounded-2xl">
+            <div className="absolute   top-[13.5rem] left-4">
+              <span className="inline-block px-3 py-1 text-sm text-white bg-[#f5167e] rounded-md">
                 {event.line1}
               </span>
             </div>
           
             {/* Event Details */}
-            <div className="py-4 px-4 flex gap-4">
+            <div className="py-4  flex gap-4">
               {/* Date Section */}
               <div className="flex flex-col items-center">
                 <span className="text-[#f5167e] text-lg font-bold">JAN</span>
@@ -283,26 +298,34 @@ const Secondpage = () => {
           ))}
          
         </div>
-        <button className="block text-xl mx-auto mt-8 w-[24rem] px-6 py-3 bg-white rounded-full text-[#f5167e] font-bold hover:bg-[#f5167e]">
+        <Link to='/event'  className="block no-underline">
+        <button className="block text-xl mx-auto mt-8  w-[20rem] sm:w-[24rem] px-6 py-3 bg-white rounded-full text-[#f5167e] font-bold ">
           See More
         </button>
+        </Link>
       </section>
 
       
-      <section className="bg-[#262626]   ">
-        <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
-          <div className="md:w-1/2">
-            <img src={img1} alt="Create Event" className="w-full " />
+      <section className=" mt-[8rem] h-[13vh] sm:h-[28vh] md:h-[32vh] lg:h-[43vh] bg-[#262626]  py-5">
+        <div className="flex flex-row items-center justify-between max-w-7xl mx-auto">
+         
+          <div className="relative w-1/2 object-cover ">
+          <div className="w-full h-[35vh] z-40 absolute -bottom-[13rem] sm:-bottom-[10rem] lg:-bottom-[4rem]">
+            <img src={img1} alt="Create Event" className="w-full" />
           </div>
-          <div className="md:w-1/2 text-start md:text-left mt-8 md:mt-0 md:pl-12">
-            <h2 className="text-3xl font-extrabold">Make Your Own Event</h2>
-            <p className="mt-4 text-gray-400">
+          </div>
+          
+          <div className="py-1 md:py-4 lg:py-8 w-1/2  md:text-left mt-2 sm:mt-8 md:mt-0 md:pl-12">
+            <h2 className="text-[8px] sm:text-xl md:text-xl lg:text-3xl font-extrabold">Make Your Own Event</h2>
+            <p className="text-[5px] sm:text-sm md:text-md lg:text-xl mt-2 sm:mt-4 text-white">
               Create and share your own events with the world. Let your ideas
               shine and connect with others.
             </p>
-            <button className="mt-6 px-12 py-2 bg-white rounded-full text-[#f5167e]  text-lg font-bold hover:bg-[#f5167e]">
+            <Link to='/business'  className="block no-underline">
+            <button className="mt-2 sm:mt-6 px-16 py-3 bg-white rounded-full text-[#f5167e]  text-[10px] sm:text-xl  ">
               Create Events
             </button>
+            </Link>
           </div>
 
       

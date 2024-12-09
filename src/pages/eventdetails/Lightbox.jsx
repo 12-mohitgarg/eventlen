@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-
+import './hello.css'
 const Lightbox1 = () => {
     
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ const Lightbox1 = () => {
 
   return (
     <div>
-      <section className="mx-[8rem] ">
+      <section className=" yello ">
         <div className="grid grid-cols-4 gap-x-4 gap-y-8 p-4">
           {images.map((image, index) => (
             <div

@@ -3,15 +3,19 @@ import Firstpage from './Firstpage'
 import Secondpage from './Secondpage'
 import Footer from '../../components/common/Footer'
 import Thirdpage from './Thirdpage'
-import Searchbar from './Searchbar'
+import Navbar from '../../components/common/Navbar'
+
+
 
 const Full = () => {
   return (
     <div className='overflow-hidden '>
+      <Navbar/>
         <Firstpage/>
-        {/* <Searchbar className=''/> */}
+       
         <Secondpage/>
         <Thirdpage/>
+      <Footer/>
        
     </div>
   )

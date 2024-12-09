@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import bg1 from '../../assets/bg1.png'
 import bg2 from '../../assets/bg2.png'
 import bg7 from '../../assets/bg7.png'
+import { Link } from 'react-router-dom';
+
 const Secondpage = () => {
 
     const [events, setEvents] = useState([]);
@@ -170,20 +172,22 @@ const Secondpage = () => {
 
   return (
     <div >
-      <img src={bg7} className='z-10 absolute -bottom-2' />
+      <img src={bg7} className='z-10 absolute top-[18rem] sm:top-[22rem]  md:top-[25rem] lg:top-[25rem]' />
          <div   style={{ backgroundImage: `url(${bg1}), url(${bg2})` }}
  className=" bg-cover bg-black px-6 py-6 ">
        
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto max-w-7xl">
+        <div className="grid mt-10 sm:mt-20 gap-6 sm:grid-cols-2 lg:grid-cols-4 mx-auto max-w-7xl">
         {events.map((event) => (
             <div className="max-w-sm mx-auto  text-white rounded-lg overflow-hidden  relative">
             
             <div className="relative ">
+            <Link to='/event-details'  className="block no-underline">
               <img
                 src={event.img}
                 alt="ForByStudents Logo"
-                className="w-full h-64 object-cover rounded-2xl"
+                className="w-80 h-80 object-cover rounded-sm"
               />
+              </Link>
               
               <div className="absolute top-2 right-2 bg-[#262626] text-[#f5167e] rounded-full p-2">
                 <svg
@@ -198,14 +202,14 @@ const Secondpage = () => {
             </div>
           
             {/* Badge (Line1) */}
-            <div className="absolute bottom-[17.5rem] left-5 sm:bottom-[16rem] sm:left-4">
-              <span className="inline-block px-3 py-1 text-sm text-white bg-[#f5167e] rounded-2xl">
+            <div className="absolute  top-[17rem] left-4">
+              <span className="inline-block px-3 py-1 text-sm text-white bg-[#f5167e] rounded-md">
                 {event.line1}
               </span>
             </div>
           
             {/* Event Details */}
-            <div className="py-4 px-4 flex gap-4">
+            <div className="py-4  flex gap-4">
               {/* Date Section */}
               <div className="flex flex-col items-center">
                 <span className="text-[#f5167e] text-lg font-bold">JAN</span>

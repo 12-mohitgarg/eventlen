@@ -1,0 +1,38 @@
+.hello {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    
+}
+
+@media (min-width: 1024px) {
+    .hello {
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+  }
+@media (min-width: 768px) {
+    .hello {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+  }
+
+
+.yello {
+    margin-left: 0rem;
+    margin-right: 0rem;
+    
+}
+
+@media (min-width: 1024px) {
+    .yello {
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+  }
+@media (min-width: 768px) {
+    .yello {
+        margin-left: 4rem;
+        margin-right: 4rem;
+    }
+  }

@@ -131,32 +131,35 @@ import React from 'react';
 import img from '../../assets/qr.png';
 import bg2 from "../../assets/bg2.png";
 import bg1 from "../../assets/bg1.png";
+import Navbar from '../../components/common/Navbar';
+import Footer from '../../components/common/Footer';
 
 const Myeventdetails = () => {
   return (
     <div>
+      <Navbar/>
       <div
         style={{ backgroundImage: `url(${bg1}), url(${bg2})` }}
-        className="bg-black bg-cover min-h-screen p-8 text-white"
+        className="bg-black bg-cover min-h-screen p-6  text-white"
       >
         {/* Event Card */}
-        <div className="bg-[#262626] p-6 rounded-lg max-w-4xl mx-auto shadow-lg">
+        <div className="bg-[#262626] p-3 mt-[5rem] sm:p-6 rounded-lg max-w-4xl mx-auto shadow-lg">
           {/* Header Section */}
-          <div className="bg-[#262626] px-6 py-3 rounded-lg max-w-[50rem] mx-auto flex flex-row items-center space-y-6 md:space-y-0 space-x-6">
+          <div className="bg-[#262626] px-3 sm:px-6 py-3 rounded-lg max-w-[50rem] mx-auto flex flex-row items-center space-y-6 md:space-y-0 space-x-2 sm:space-x-6">
             {/* Event Thumbnail */}
             <div className="w-1/4">
               <img
                 src="https://s3-alpha-sig.figma.com/img/3969/1462/48009e641f454298f62e13de84ac0a09?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=negzr8C4y-mkflW1BVZbTeN2tOfAaiY8I-13SNi2xXTr7i-Bm6ttAhHRlXrJ3zShOYGSTNdlwwSj2Fkm~5IgkIK1gT6boWVSfJoCtwsiiJQVA9EavCWd9QxczvP~gHQSIl8G~byeLQr3Mfk1HZ7-FJ5EpAYLaAV1eeOnFIdD~vTpDc51HM~IRiaR8wJ0NALUXv6RWpkng3SHSPzO9ciW8rjq02GXH2pMTgQfSXgemHUZjTNpq2MZhS3iPSaXkKz-wHcugDe9vIKNfPx-k12vQ7qfgJqoac7qskgrcmLdmvJMoUi0UFQl62azDBDT2PpTIABeSJzhIJt2OtinEg9Q9Q__"
                 alt="Event Thumbnail"
-                className="rounded-md border border-gray-700 h-[8rem] sm:h-[15rem] w-[112px] sm:w-full "
+                className="rounded-md border border-gray-700 h-[6rem] sm:h-[15rem] w-[112px] sm:w-full "
               />
             </div>
 
             {/* Event Details */}
             <div className="w-full md:w-3/4">
               <h2 className="text-[8px] sm:text-2xl font-bold  text-start md:text-left">Mehendi Ceremony</h2>
-              <h2 className="text-[10px] sm:text-3xl font-bold  text-start md:text-left">The Road to Jobs and Internships: Starting with LinkedIn Webinar</h2>
-              <div className="text-[6px] sm:text-lg text-gray-300 mt-2 text-start md:text-left">
+              <h2 className="text-[6px] sm:text-3xl font-bold  text-start md:text-left">The Road to Jobs and Internships: Starting with LinkedIn Webinar</h2>
+              <div className="text-[4px] sm:text-lg text-gray-300 mt-2 text-start md:text-left">
                 
                 <p className="text-[#f5167e]">
                   <i className="fas fa-calendar-alt mr-2 text-[#cccccc]"></i>24 Oct 2023 | 5:30 PM - 28 Oct 2023 | 9:30 PM
@@ -217,15 +220,16 @@ const Myeventdetails = () => {
 
           {/* Action Buttons */}
           <div className="mt-6 flex flex-col gap-3 space-x-4 justify-center">
-          <button className="bg-white  w-[20rem] mx-auto px-6 py-2 rounded-3xl text-[#f5167e] font-semibold">
+          <button className="bg-white w-[16rem]  sm:w-[20rem] mx-auto px-3 py-2 rounded-3xl text-[#f5167e] font-semibold">
             Download Ticket
           </button>
-          <button className="bg-white  px-6 py-2 w-[20rem] mx-auto rounded-3xl text-[#f5167e] font-semibold">
+          <button className="bg-white  px-6 py-2 w-[16rem]  sm:w-[20rem] mx-auto rounded-3xl text-[#f5167e] font-semibold">
             Share Ticket
           </button>
         </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

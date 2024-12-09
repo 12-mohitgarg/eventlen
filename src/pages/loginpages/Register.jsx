@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import bg4 from '../../assets/bg4.png';
 
-const Register = () => {
+const RegisterModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     fullName: "",
     gender: "",
@@ -31,15 +30,21 @@ const Register = () => {
     console.log(formData);
   };
 
+  if (!isOpen) return null;
+  
+
   return (
-    <div  style={{ backgroundImage: `url(${bg4})` }} className="px-3 flex items-center justify-center min-h-[40rem]   bg-black bg-cover">
+    <div style={{ marginTop: "-1px" }}   className="fixed inset-0 z-50 flex items-center justify-center  bg-black bg-opacity-50">
+
+      <div className="w-[45rem]  max-w-7xl rounded-2xl shadow-lg">
+      <div  className=" px-3 flex items-center justify-center  ">
       
       <form
         onSubmit={handleSubmit}
-        className="bg-[#262626] text-white px-12 py-12 rounded-2xl shadow-lg p-8 w-full max-w-2xl"
+        className="bg-[#262626] text-white  h-[29rem] sm:h-[32rem] rounded-2xl shadow-lg px-8 pt-8 sm:pt-6 w-full max-w-2xl"
       >
        <div className="text-2xl font-bold mb-4">
-          <button className="text-3xl text-white">
+          <button className="text-3xl text-white" onClick={onClose}>
             ←
           </button>
           Fill Details</div>
@@ -115,18 +120,25 @@ const Register = () => {
             ))}
           </select>
         </div>
+        
        <div className="w-[80%] mx-auto">
        <button
           type="submit"
-          className="w-full p-2 font-semibold text-xl  bg-white text-[#f5167e]  rounded-3xl  transition duration-200"
+          className="w-full p-2 mt-4 font-semibold text-xl  bg-white text-[#f5167e]  rounded-3xl  transition duration-200"
         >
           Proceed
         </button>
        </div>
       </form>
     </div>
+      </div>
+   
+    </div>
   );
 };
 
+export default RegisterModal;
 
-export default Register
+
+
+
